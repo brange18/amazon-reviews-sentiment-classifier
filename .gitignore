@@ -1,0 +1,19 @@
+# Data (large, re-downloadable) - not committed
+data/Gift_Cards.jsonl.gz
+data/NRC.zip
+data/extracted/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+MBAX 6418 Assignment 1.pdf
+
+# local LLM response cache (regenerable)
+results/llm_cache.jsonl
+results/dashboard_dummy.html

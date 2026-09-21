@@ -1,0 +1,53 @@
+{
+  "tag": "balanced3",
+  "params": {
+    "rows": 100,
+    "label": "3class",
+    "seed": 42,
+    "balanced": true,
+    "per_class": 50,
+    "with_emotion": true,
+    "tag": "balanced3",
+    "no_save": false
+  },
+  "metrics": {
+    "label_scheme": "3class",
+    "n_rows_attempted": 150,
+    "n_classifications": 150,
+    "n_errors": 0,
+    "accuracy": 0.7333,
+    "accuracy_pct": 73.33,
+    "per_class": {
+      "NEGATIVE": {
+        "n_in_batch": 50,
+        "n_scored": 50,
+        "correct": 48,
+        "accuracy": 0.96
+      },
+      "NEUTRAL": {
+        "n_in_batch": 50,
+        "n_scored": 50,
+        "correct": 14,
+        "accuracy": 0.28
+      },
+      "POSITIVE": {
+        "n_in_batch": 50,
+        "n_scored": 50,
+        "correct": 48,
+        "accuracy": 0.96
+      }
+    }
+  },
+  "confusion": {
+    "POSITIVE->POSITIVE": 48,
+    "POSITIVE->NEGATIVE": 1,
+    "POSITIVE->NEUTRAL": 1,
+    "NEGATIVE->POSITIVE": 0,
+    "NEGATIVE->NEGATIVE": 48,
+    "NEGATIVE->NEUTRAL": 2,
+    "NEUTRAL->POSITIVE": 5,
+    "NEUTRAL->NEGATIVE": 31,
+    "NEUTRAL->NEUTRAL": 14
+  },
+  "errors": []
+}

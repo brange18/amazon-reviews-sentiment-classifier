@@ -1,0 +1,151 @@
+rating,rating_int,title,text,label_answer,pred,emotion,correct
+5.0,5,Gift Card,We love Roosters!,POSITIVE,POSITIVE,joy,True
+5.0,5,Great gift,Many choices for use,POSITIVE,POSITIVE,joy,True
+5.0,5,Such a great gift card tin,Such a great gift card tin! Amazon gift cards are always well received-everyone loves them! Makes gift shopping so easy!!,POSITIVE,POSITIVE,joy,True
+5.0,5,Great gifts!,"My daughter's birthday was the 19th, so I bought her a $50 Amazon gift card.  My birthday was the 23rd and she bought me a $50 Amazon gift card!  We both love getting these as we are frequent customers of Amazon, they have everything you need.",POSITIVE,POSITIVE,joy,True
+5.0,5,Easy Simple and Enjoyable,It was great 👍,POSITIVE,POSITIVE,joy,True
+5.0,5,Just what I wanted,Came fast and as expected.,POSITIVE,POSITIVE,joy,True
+5.0,5,Lo recomiendo.,Excelente.,POSITIVE,POSITIVE,joy,True
+5.0,5,It worked!,I tried to buy off microsoft store but it wasn't accepting my card. I bought this through amazon and it worked,POSITIVE,POSITIVE,joy,True
+5.0,5,arrived fast!,Always love a gift card!,POSITIVE,POSITIVE,joy,True
+5.0,5,Perfect to give as gift,"It's a gift card....,what more is there to say ?",POSITIVE,POSITIVE,joy,True
+5.0,5,Easy to give as a gift.,Gas card.,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Love It!,POSITIVE,POSITIVE,joy,True
+5.0,5,Nice little tin box,"It comes with a nice little tin box which can be used for other stuff (i.e. card storage, etc)",POSITIVE,POSITIVE,joy,True
+5.0,5,Easy,Very easy to use,POSITIVE,POSITIVE,joy,True
+5.0,5,Beautiful gold box,[[VIDEOID:9098c02c1b448bb11a86ec1623915b01]] Makes gift card a gift,POSITIVE,POSITIVE,joy,True
+5.0,5,cute container,The cupcake holder for the gift card really added to the appeal of the card!,POSITIVE,POSITIVE,joy,True
+5.0,5,Elegant box,Loved the gifty card box. Very elegant.,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Very easy to do,POSITIVE,POSITIVE,joy,True
+5.0,5,New mom loves it,It made a great impression and my friend remarked how adorable it looks.,POSITIVE,POSITIVE,joy,True
+5.0,5,Yummm,Kids love Red Robin.,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,"Quickly received, no surprises",POSITIVE,POSITIVE,joy,True
+5.0,5,Always on time,Makes everything better when you see that item you want,POSITIVE,POSITIVE,joy,True
+5.0,5,Perfect gift,This was a perfect gift for my granddaughter.,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Fast shipping and great for a gift idea.,POSITIVE,POSITIVE,joy,True
+5.0,5,Totally worth the $25,"You want me to write a review for this? Ok. I really wanted $26 but got the $25 I was told I would get if I spent $25 on it. Oh well. I guy can hope. The real question is if it worked at the restaurant or not. It was a gift for someone else so as far as I'm concerned, A+ on my end.",POSITIVE,POSITIVE,joy,True
+5.0,5,Snow Flake Gift Box,The snow flake gift box (and the gift card inside!) got a big smile from my nephew when we opened it at Christmas.,POSITIVE,POSITIVE,joy,True
+5.0,5,amount balance,Easy to use,POSITIVE,POSITIVE,joy,True
+5.0,5,Reload plus bonus,What’s not to like I used a visa gift card I got as a reward to reload.,POSITIVE,POSITIVE,joy,True
+5.0,5,Good,Good,POSITIVE,POSITIVE,joy,True
+5.0,5,Love my knives,It is very sharp!,POSITIVE,POSITIVE,joy,True
+5.0,5,Great idea for a gift,Lightning deal.  Delicious ice cream combos made right before your eyes.,POSITIVE,POSITIVE,joy,True
+5.0,5,Classy Gift card in a holiday Box,Perfect for holiday gift giving in a premium gift box.,POSITIVE,POSITIVE,joy,True
+5.0,5,Very simple to use and it's very quick.,"I wanted to reload on my account so I did. It was very quick and easy. I was thinking it would take more than 5 minutes, but it actually reloaded for less than 5 minutes, so they were right. I would totally use this again in the future when I need to reload on my account.",POSITIVE,POSITIVE,joy,True
+5.0,5,Well.  It’s my money so it’s pretty cool.,I used my own money to add to.. my......  own account.  I mean...  I guess this is a reviewable item?,POSITIVE,NEUTRAL,surprise,False
+5.0,5,LOVE this unique way to give a gift card.,Not only can you get someone a gift card - but it comes with an additional gift - a felt ornament. Getting Christmas gifts for extended family is so time consuming and wasteful. Gift cards & the ability to buy literally anything on Amazon is so convenient and appreciated by people. Definitely recommend this one out of other available cards because it comes with a cute ornament that looks great on a tree!,POSITIVE,POSITIVE,joy,True
+4.0,4,Issue in distinguishing,"I ordered few cards of $25 and few of $50, all looks alike and came in same package. How to distinguish?",POSITIVE,NEGATIVE,anger,False
+5.0,5,Love it',Like,POSITIVE,POSITIVE,joy,True
+5.0,5,Fast shipping!,"Fast shipping! Great, easy gift for last minute. My dad loved receiving this.",POSITIVE,POSITIVE,joy,True
+5.0,5,Easy,Very convent in emergency’s,POSITIVE,POSITIVE,trust,True
+5.0,5,Easy Peasy,Very easy to add money to my account and I got a bonus for doing so.,POSITIVE,POSITIVE,joy,True
+5.0,5,Penguin Card Holder,"Adorable card holder, cuter than I expected",POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,everyone loved,POSITIVE,POSITIVE,joy,True
+5.0,5,Search for coupon to get free money!,Who doesn't love getting some free money when you reload your cards?,POSITIVE,POSITIVE,joy,True
+5.0,5,Didn’t have to go anywhere got it the next day,Easy,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Pretty easy way to spend thx,POSITIVE,POSITIVE,joy,True
+5.0,5,Great small gift,These are great for small gifts for customers. I put one in a card and everyone is thrilled to get them.,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Can't go wrong with a $25 dollar gift card,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Awesome gift package for the price! Definitely recommend in a pinch!!!!,POSITIVE,POSITIVE,joy,True
+5.0,5,Perfect gift,Love sending gift cards to people for different holidays<br />Gets there fast,POSITIVE,POSITIVE,joy,True
+5.0,5,Five Stars,Perfect present for college bound grandchild.,POSITIVE,POSITIVE,joy,True
+3.0,3,gift card,Because I think the description of the product was wrong I am not sure either of the people I bought these gift cards for have an Amazon account,NEUTRAL,NEGATIVE,fear,False
+3.0,3,It is a card.,"The presentation seemed kind of cheesy and Christmasy. Other than that, it is a card. Nothing too exciting or disappointing.",NEUTRAL,NEUTRAL,trust,True
+3.0,3,Three Stars,ok as promised,NEUTRAL,NEUTRAL,trust,True
+3.0,3,Where Was The Personal Message?,"It is a gift card so there is not a lot to review there.  However, it has you fill out a section for the personal note which I did on two cards that I bought, nothing showed up. What was the point in having me fill out that section if they were not going to bother putting the note on there?. I had the cards shipped to me and then sent them out.  If they had gone straight to the giftee, they would not have had a clue who they were from.  So those shipping to the receiptant beward of that!  Other than that, they are cute cards and were shipped next day.  They were much appreicated after I wrote the personal message myself!",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Giftable but not easy to add to wallet.,It is not easy to use. I cannot add to my Google wallet. So I would avoid it.,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Three Stars,like,NEUTRAL,NEUTRAL,joy,True
+3.0,3,"Iffy use,...depends on situation, check fine print",Worked fine for gas.  Did NOT work to reload my Sunpass.,NEUTRAL,NEUTRAL,surprise,True
+3.0,3,How to use and redeem,"I do not understand how this works, confusing to me.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Easy to give someone you care about,Was a birthday present for my new son-in-law. He was really appreciated it.,NEUTRAL,POSITIVE,joy,False
+3.0,3,Nice,Perfect as a gift for a graduate.,NEUTRAL,POSITIVE,joy,False
+3.0,3,Baby gift card,I wish Amazon had a metal gift box for baby gift cards like they do for birthdays.,NEUTRAL,NEUTRAL,anticipation,True
+3.0,3,"Arrived heavily dent, feel embarrassed to gift away","Arrived heavily dent, feel embarrassed to gift away",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Cannot use for all Amazon services!!,"This card was purchased for the purpose of paying my Prime subscription and Prime Video Channels monthly fee.  Although I had enough on my gift card to cover the fees, my subscriptions were suspended because the fees must be paid by credit card or check.  Really???  This doesn't make sense, but I confirmed it while chatting with an Amazon rep.  I'd like to know the reasoning behind this decision.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Card did not come with the note I requested.,"Card did not come with the note I requested, and small corner of peel off section to reveal code is missing, not sure why.  And the card does not indicate how much is on it.  It is a gift for someone so all the above is very annoying, and not good customer service.  Seems to be no way to check the value of the card (making sure it actually has the value stated loaded on it), before I give to the recipient.  Amazon just seems to have option to load it on to my own account which I do not want to do.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,I thought the $6.95 charge was excesive,The loading charge I thought was excessive,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Quick Shipping but..,I'm just frustrated that I couldn't add it to my Apple Pay wallet. It's not compatible in that way. There were times that my husband had the card and I needed it so it would have been super convenient if I were able to add it to my phone wallet.,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Gift message not included.,I ordered this as a graduation gift and wrote my gift note to be included with the package and it was not included. Very disappointing,NEUTRAL,NEGATIVE,sadness,False
+3.0,3,"If you're a patient person who doesn't mind, confusing, complicated, & difficult transactions, these are the giftcards for you!","Be prepared that very few people at Hyatt know how these giftcards work.  I've tried to use several giftcards at several locations on several different occasions, and each time, every Hyatt employee I've encountered (over the phone or in person) have to put me on hold and call corporate to figure out how to redeem them.  I'm literally sitting on hold right now trying to book an advanced reservation with one now and they can't seem to figure out how to apply a $100 gift card to a $500 reservation.  (15 minutes and counting).  This is the third time I've tried to use it.  The answer I just received is &#34;you can't use a gift card on an advanced booking rate&#34;----different answers with different hotels.  When I call the same hotel later tonight, I will get a different answer.  At a different hotel 2 months ago, they nearly lost their minds because first they said you couldn't use them in international hotels (wrong) and then they said you can only use one gift card per stay (also wrong---after calling corporate for 1 hour, they took them all).  Long story short:  you will experience resistance, confusion, and stress every time you try to use one---especially if you try to use more than one.  One thing to keep in mind:  The FULL balance of your giftcard has to be used---ie:  if you have a $200 balance and your booking is only $100, you will not be able to use the giftcard.  Your giftcard will pay for anything on your folio, however (ie:  spa treatments, meals, room service, etc).  Hope this helps.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Good product at a good price. Recommend.,Good product at a good price. Recommend.,NEUTRAL,POSITIVE,joy,False
+3.0,3,OK,OK,NEUTRAL,NEUTRAL,trust,True
+3.0,3,Box Review,This review is for the gift box. It is beautiful but very hard to open. I ordered two of them and both had the same issue. You have to force them open and then it is very difficult to get the box to fit back together.,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Directions in wrong place,"Nice size and shape. Can easily be added to a holiday card. BUT … The directions for cashing in the gift card are written on the ugly, protective plastic wrapper. The wrapper is removed before giving the gift card so the recipient doesn’t get the directions!!!  The directions for cashing-in the gift card should be written in the decorative cover — not on the disposable wrapper. AND … The directions are wrong!!!  All you need to do is log onto your Amazon account and click on the “Gift Card” tab. Then select “redeem.”  This information should be included on the card-sleeve.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,came damaged,"The gift card came dinged and damaged, no way was suitable for gift giving. It was shipped in a box so it was damaged before I even got it so poor quality control. I ended up using it myself and bought a new one at a local store in better shape for the gift.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Quick,Reload quick,NEUTRAL,POSITIVE,joy,False
+3.0,3,Not great,Not great,NEUTRAL,NEGATIVE,sadness,False
+3.0,3,Easy to do but very slow.,Worked well but it was very slow took several days to show the balance.,NEUTRAL,NEUTRAL,trust,True
+3.0,3,Reload,For the most part it's pretty easy sometimes it takes a little while,NEUTRAL,NEUTRAL,trust,True
+3.0,3,Lost $100.00,It did not work. I lost the money. Lost,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Three Stars,"The amount purchased ia correct, but the card has swipe marks.",NEUTRAL,NEUTRAL,trust,True
+3.0,3,Old glue caused the card to detach,The Actual card came detached from the cardboard.  Old glue maybe?,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Easy to use,Easy to use and send.,NEUTRAL,POSITIVE,joy,False
+3.0,3,""" FROM WHO ??? """,No Message of To /From ! Left in Drive Way ! Process seems poorly set up !,NEUTRAL,NEGATIVE,anger,False
+3.0,3,"Nice Product, but delivery problems","Nice product, but delivery problems",NEUTRAL,NEUTRAL,anger,True
+3.0,3,It's a gift card.......,Like I said - It's a gift card.......,NEUTRAL,NEUTRAL,trust,True
+3.0,3,Make sure you order the gift card of your choice,"Cute Amazon box, but not the gift box I chose<br />I ordered the gold gift box with gift card as a wedding anniversary gift for someone.<br />I ended up with a plain cute smile mail box instead. there was no gift receipt in the box so they had no idea who sent it. The gift card did work though.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Did what any Giftcard does,"Came on time, worked, not much else to say.",NEUTRAL,NEUTRAL,trust,True
+3.0,3,Three Stars,Really not all that impressed,NEUTRAL,NEGATIVE,disgust,False
+3.0,3,the survey was a bit misleading.,the survey was a bit misleading. I was under the impression that by doing the survey I received a gift card,NEUTRAL,NEGATIVE,sadness,False
+3.0,3,It's a gift card,It's a gift card...don't understand why you are charged an activation fee...other sites have them without one,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Slow Shipping,"It’s a gift card so nothing to really rate, but I’m withholding 2 stars because shipping took forever.",NEUTRAL,NEGATIVE,anger,False
+3.0,3,Tricky Checkout,I purchase this by accident.  Be careful when you order anything from Amazon.  Check out is a little tricky.,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Paper gift card,"Beautiful box, but paper gift card inside box looked like it had been folded in half.",NEUTRAL,NEGATIVE,disgust,False
+3.0,3,Gift card undelivabe,"I wanted my gift card to go family in Italy, but I was not able to have it shipped there for some reason was on your undelivable site.<br />Very disappointed",NEUTRAL,NEGATIVE,sadness,False
+3.0,3,Debit over credit gift card ?,Limited use,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Three Stars,ok,NEUTRAL,NEUTRAL,trust,True
+3.0,3,I am not get $5 gift for my first gift card,I am not get $5 gift for my first gift card,NEUTRAL,NEGATIVE,anger,False
+3.0,3,amount of gift card not printed,The amount of the gift was not printed on the card so I enclosed a note.  Past orders have had the amount on the card.  The graduation box is great.,NEUTRAL,NEUTRAL,trust,True
+3.0,3,No se a podido utilizar,Nose que paso que  el primer día apareció el saldo y luego se desapareció,NEUTRAL,NEGATIVE,anger,False
+3.0,3,Three Stars,Little disappointed because the movie could only be used at one location In Oklahoma city,NEUTRAL,NEGATIVE,sadness,False
+3.0,3,Had trouble with every purchase,"Not sure why, but had trouble everywhere I used this card. It worked eventually but I used it a total of 3 places and not a single transaction was straightforward.  I had to return an item that I'd initially purchased with this card and it took about 3 days for the return to post back to the card.",NEUTRAL,NEGATIVE,anger,False
+1.0,1,Money getter,It’s difficult,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Verify everything.,"Ordered a few of these last Christmas. One came loaded, the other did not. Niece brought the matter up at a family get together. You can imagine my embarrassment. Bezos got my money and I got a red face. Nice.......",NEGATIVE,NEGATIVE,anger,True
+2.0,2,I made a selection error but tried to change it ...,"I made a selection error but tried to change it but unable to, so I was not able to take advantage of the offer.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Gift card that arrived had zero balance,When the recipient of this card attempted to use it there was zero balance on it and the gift card was not able to be used.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,loading from a debit card randomly doesn't work,"loading from a debit card randomly doesn't work with very unhelpful message, that is hard to understand and take action on",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Card doesn't work,Issue with cards not working.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,VERY DISSAPOINTED IN AMAZON,Dont buy gift cards from Amazon.  I tried all five of the cards and  the  16 numbers if each if five  cards COULD NOT BE SCANNED OR ENTERED.  GIFT CARDS ARENT RETURNABLE TO AMAZON.<br />The reveal card is great but the gift card doesnt work.,NEGATIVE,NEGATIVE,anger,True
+2.0,2,If it is a gift maybe go into the store,"The gift card works fine and the convenience was amazing. The condition of the gift card after it arrived....not so much. To use my daughters words, they dropped it on the ground and then walked on it all day, picked it up and shoved it in the packaging without even wiping it off.",NEGATIVE,NEGATIVE,disgust,True
+1.0,1,One Star,"Showed up not loaded, Amazin could care less!",NEGATIVE,NEGATIVE,anger,True
+2.0,2,.,Not packaged as described,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Told How To Pay,"Buy e-books when an e-gift card is loaded to your account, and that is how you are going to be forced to pay for it. Doesn't matter if you have a bonus category credit card you'd prefer to use.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Paper gift card - boo,Holder  is perfect. Gift card that came was paper with a sticker on the back. The claim code is permanently adhered to the back of the sticker. I guessed a few letters of it and contacted Amazon hoping they would credit the amount to my account. It is for $50 I certainly hope they give it to me!,NEGATIVE,NEGATIVE,anticipation,True
+1.0,1,Poor security.,I did not buy this card. My account was compromised. Gave one star for poor security on Amazon’s part.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,getting out,i got into a nightmare. once you are in - you are in. it goes against my will. i want out and it seems impossible. enter at your own risk,NEGATIVE,NEGATIVE,fear,True
+1.0,1,Card did not work,Somehow the card number was taken and used when my son went to use it the card had a 0 balance and was used to purchase google play 7x in a row. I contacted Amazon customer service and said I would have a refund in 3-5 business days and it’s been over a week and no refund.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Beware of scatching,Scratched off back and 2 letters or numbers were removed as well ..,NEGATIVE,NEGATIVE,anger,True
+2.0,2,"Poorly done UI interface, no way to undo","First of all, I really don't like that they default the value to $100. I accidentally ordered a $100 gift card because of this.<br />Second, I tried adding a new card, and missed seeing the second 'Add card' button. (why should I have to click the words 'Add card' two times?) There is no way to cancel the order like other kinds of orders, since they are so happy to take the money it processes instantly. No confirmation page like when ordering off a shopping cart.",NEGATIVE,NEGATIVE,anger,True
+2.0,2,Need to know who the gift is for and who it's from,"A gift card is relatively easy gift to provide.  The only real issue is to know who it's going to and who it's from.  I recently sent my 6 year old grand niece a gift card.  When I sent the gift card I marked it as a gift and added a note.  There are multiple birthdays in this month, but unfortunately when the gift card arrived, no one was able to determine who the gift card was for or who it came from.  Something so simple, but messed up.  We asked her mom if they had received it and she said yes, but they too did not know who it was for or who sent it.  In the end, the mystery was solved, but a little more attention to details would  be nice.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,It was something.,It was something.,NEGATIVE,NEUTRAL,surprise,False
+1.0,1,Do not recommend,The worst part is that there is no value on the card can’t tell how much each is,NEGATIVE,NEGATIVE,anger,True
+1.0,1,ACTIVATE MY RECENT PURCHASE OF AMAZON GIFT CARD WORTH OF $2000,I've an Amazon gift card which was ordered through my account. But I cannot use the Gift Card and it is saying to activate the Amazon Gift Card. Please activate my Gift Card.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,****BIG SCAM*** DONT BUY****,Not working at any of the stores mentioned. Cannot reach Customer Support. Gift card is not returnable at Amazon.<br /><br />BIG SCAM....stay away from buying this card.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,One card was redeemed.,"It's a shame but I ordered $250 worth of Uber Eats - $50 - 5 cards.  When we went to use one of the cards, it was rejected because it said it had already been redeemed.  I don't know how this could happen.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Payless is in Bankrupty - the gift card cannot be used online,"I purchased a $25.00  Payless Gift card for a relative as part of her Birthday gift. There was no attempt to use this card until approximately one month ago. My relative began searching for shoes online and found several pairs of shoes that she liked and was ready to order when she noticed that Payless did &#34;not&#34; have the option to use its gift card for a purchase.  We felt that this was a glitch or technical issue with the website that went on for several weeks.  During the middle of last week, my relative found 4 pairs of shoes that she wanted to order using the gift card and her Visa but she could not because there was &#34;still&#34; no option to enter Payless Gift Card information.  My relative called customer service to find out if they could place a phone order for the online order.  The answer was a clear &#34;No. 'She kept waiting and attempting until finally calling Customer Service yesterday.  The representative was rude and did not offer any remedy for the situation.  My relative went into Payless in our town 2X's attempting to find the same style without success except for one of the pairs of shoes which would have cost much more in the store.  Online there was an initial sale plus she had a code to use for another 20% off.  These discounts were not available in the brick and mortar store.  It should not have been this difficult for Payless to turn this situation around.  The Payless Gift Card clearly states that it can be used in store and online.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Not ok,When it got to me after paying $105 there was no money on it,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Complete scam,This was the worst gift card I bought for anyone. I got it for a friend and upon verifying it and buying a cup of coffee and the rest of the money was PayPaled to someone’s account!!!<br />Be careful!!<br /><br />NEVER BUYING AGAIN AND WONT RECOMMEND<br />TRIED CALLING THE NUMBER ON THE BACK AND EMAILING WITH NO USE,NEGATIVE,NEGATIVE,anger,True
+2.0,2,Some of the card did not work when trying to enter them into my account. What do I do?,I was told some of the cards did not work. WHAT DO I DO!,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Never got,Never got the $10,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Issued unload and activated,I am not impressed to say the least.... ordered 2 and one came not loaded or activated. Quite embarrassing when it was given as a gift. Should be a simple task to activate and send?  Customer severe couldn't correct the problem,NEGATIVE,NEGATIVE,anger,True
+2.0,2,Activation process is a nightmare,I gave this as a gift and was embarrassed by how troublesome it was for the recipient to activate. It involved numerous phone calls and visits to the website before this could be used. Next time I am giving cash!,NEGATIVE,NEGATIVE,anger,True
+1.0,1,One Star,I never received these gift cards.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Not allowed to buy gift cards?,Pretty stupid. Nobody likes products that come with caveats.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,not useful to add to apple wallet,Bought this for my daughters apple wallet so she did not have to worry about losing a credit card. Complete waste of time,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Zero Balance Cards,I ordered a large qty of these cards for holiday gifts for clients. All the cards from my order have come up as invalid when trying to be redeemed by my clients. I have contacted Amazon customer service multiple times and have not received any follow up on having this issue resolved or credited.,NEGATIVE,NEGATIVE,anger,True
+2.0,2,arrived damaged,"The card box arrived squished. The corner of the box is ripped. The card inside is made out of carton, not plastic and there is no value printed on the card.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,Red Robin has poor customer service,"Received gift card from my daughter, followed instructions on gift card and took the card to the red robin and presented to cashier would not accept card, who then called manager who said I needed a pin number. I called amazon who intern gave me a number to call at red robin, who forward to me of two more more numbers to call at red robin with the same results, no call back or no one helpful to resolve this problem. Red Robin has poor customer service.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,ZERO BALANCE!!!,Fandango card was empty!,NEGATIVE,NEGATIVE,anger,True
+1.0,1,Was Gauranteed two day delivery. Then received messaged it ...,Was Gauranteed two day delivery.  Then received messaged it was delayed and I should receive in 1-2 more days.  Now it's been four days and still no gift card!  And now I do not have it for when I needed it.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,"THIEVES! Steal your money for ""not activated""","Took my money instantly. ""Not activated."" Zero help from Amazon, sent me to various departments. Talked with sweet people, who have no answers. READ the reviews. These people are telling the truth. NO response from Texas Roadhouse. WASTE OF MONEY and I'm angry.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,outback going downhill,seating was torn with stuffing sticking out . steak was tough and inedible . Shrimp was floating in grease,NEGATIVE,NEGATIVE,disgust,True
+1.0,1,Poop,Make it easier to find the amount on gift cards,NEGATIVE,NEGATIVE,anger,True
+2.0,2,Disappointed,"I ordered a gift card with a father's day card attached, and the envelope came sealed so I couldn't use it, and the card has a tear on the inside. Very disappointing considering it is a Father's Day gift!",NEGATIVE,NEGATIVE,sadness,True
+1.0,1,Don't use it,"After two days I still haven't got my credit on my gift card, still shows a balance of zero. Within 5 minutes, that's a joke.",NEGATIVE,NEGATIVE,anger,True
+2.0,2,Don't order multiple cards at the same time,"Stick to one card per order. I ordered 5. They don't list the value on the card or the packaging, so you can't tell which is which. There was also no packing slip giving me any information. The gift card packaging says ""To check the purchased value of the gift card(s), simply match the last 4 digits of the serial number on the back of the gift card to those listed on www.amazon.com/yourorders."". When going into ""your orders"" on the app or the mobile website, the information is not available. It doesn't give a breakdown of each Amazon card individually. You must visit the website on a laptop or desktop to access the info. Please simplify this process.",NEGATIVE,NEGATIVE,anger,True
+1.0,1,No activation code sent.,Not able to use the Master Card $25.00 card without the activation code.<br />Would just like to get the code so it can be used.<br />So far no communication at all.,NEGATIVE,NEGATIVE,anger,True
+2.0,2,Cheap card. Nice tin,The card inside was cheap. I didn’t realize it was a paper card and not a plastic one. Better off getting a card at the store.,NEGATIVE,NEGATIVE,anger,True
+1.0,1,gross USED gift card,The carboard the card was attached to was ripped and the card definitely has swipe marks.  Not exactly what you want in something you are planning on giving as a gift.,NEGATIVE,NEGATIVE,disgust,True
+1.0,1,A gift for my daughter,Purchased for a gift for my daughter for Mother's day. She received it ok. No problem.,NEGATIVE,NEUTRAL,trust,False
+1.0,1,Step Father's Gift Cards Stolen,"I have purchased so many gift cards over the years and now the one thing has happened that always makes me think twice about ordering gift cards. The $50 gift card that I purchased for my Step Father was stolen out of his car. Unfortunately, he had all 3 gift cards (2 thru Amazon & 1 directly from Olive Garden) he received as presents for his birthday in the same place & all were taken.  I feel really bad, but I don't think there is anything that can be done.",NEGATIVE,NEGATIVE,sadness,True
+1.0,1,Not recommended at all.,Not recommended at all.,NEGATIVE,NEGATIVE,anger,True

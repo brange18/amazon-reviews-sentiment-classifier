@@ -1,0 +1,41 @@
+{
+  "tag": "seq100",
+  "params": {
+    "rows": 100,
+    "label": "2class",
+    "seed": 42,
+    "balanced": false,
+    "per_class": 50,
+    "tag": "seq100",
+    "no_save": false
+  },
+  "metrics": {
+    "label_scheme": "2class",
+    "n_rows_attempted": 100,
+    "n_classifications": 100,
+    "n_errors": 0,
+    "accuracy": 0.98,
+    "accuracy_pct": 98.0,
+    "per_class": {
+      "NEGATIVE": {
+        "n_in_batch": 7,
+        "n_scored": 7,
+        "correct": 6,
+        "accuracy": 0.8571
+      },
+      "POSITIVE": {
+        "n_in_batch": 93,
+        "n_scored": 93,
+        "correct": 92,
+        "accuracy": 0.9892
+      }
+    }
+  },
+  "confusion": {
+    "POSITIVE->POSITIVE": 92,
+    "POSITIVE->NEGATIVE": 1,
+    "NEGATIVE->POSITIVE": 1,
+    "NEGATIVE->NEGATIVE": 6
+  },
+  "errors": []
+}

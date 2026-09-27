@@ -90,9 +90,9 @@ def build_html(data):
         ok = sum(1 for r in sub if r.get("correct"))
         per_class_acc[c] = (round(100 * ok / n_c, 1) if n_c else 0)
 
-    # confusion (answer -> predicted)
+    # confusion (answer -> predicted) -- full grid, zeros shown
     conf = {}
-    all_labels = sorted({class_of(r["rating"]) for r in rows} | {r.get("predicted") for r in rows if r.get("predicted")})
+    all_labels = ["POSITIVE", "NEUTRAL", "NEGATIVE"]
     for a in all_labels:
         for p in all_labels:
             conf[f"{a}|{p}"] = sum(
@@ -107,12 +107,64 @@ def build_html(data):
     nrc_emo = None
     llm_emo = None
     emo_agree = None
+    emo_agree_all = None
+    n_nrc_missing = None
     if rows and "nrc_emotion" in rows[0]:
         nrc_emo = Counter(r.get("nrc_emotion") for r in rows)
         llm_emo = Counter(r.get("emotion") for r in rows)
         both = [r for r in rows if r.get("nrc_emotion") and r.get("emotion")]
         emo_agree = (round(100 * sum(1 for r in both if r["nrc_emotion"] == r["emotion"]) / len(both), 1)
                      if both else None)
+        # agreement over ALL rows (a row with a missing word-list emotion counts
+        # as "no agreement"), plus how many rows the word list left unlabeled.
+        n_all = len(rows)
+        agree_all = sum(1 for r in rows if r.get("nrc_emotion") and r.get("emotion")
+                        and r["nrc_emotion"] == r["emotion"])
+        emo_agree_all = round(100 * agree_all / n_all, 1) if n_all else None
+        n_nrc_missing = sum(1 for r in rows if not r.get("nrc_emotion"))
+
+    # runs comparison (optional, from run_pipeline)
+    runs = data.get("runs") or []
+    runs_html = ""
+    if runs:
+        rows_html = ""
+        for rn in runs:
+            rows_html += (
+                f'<tr><td>{esc(rn.get("name", ""))}</td>'
+                f'<td>{esc(str(rn.get("scheme", "")))}</td>'
+                f'<td>{rn.get("n", "&ndash;")}</td>'
+                f'<td class="num">{rn.get("acc", "&ndash;")}</td></tr>'
+            )
+        runs_html = f"""
+        <section class="card">
+          <h2 class="sec-title">🔁 All scored runs</h2>
+          <p class="sub">The balanced sample is the main run. The sequential first-100 is included for comparison: its easy, 5★-heavy mix inflates the headline number.</p>
+          <table><thead><tr><th>Run</th><th>Scheme</th><th>Reviews</th><th>Accuracy</th></tr></thead>
+          <tbody>{rows_html}</tbody></table>
+        </section>"""
+
+    # whole-file distribution (optional, from run_pipeline)
+    whole = data.get("whole_file")
+    whole_bars = ""
+    whole_panel = ""
+    if whole:
+        wstars = whole.get("stars", {})
+        wtotal = whole.get("total", 0)
+        wmax = max(wstars.values()) or 1
+        for s in range(1, 6):
+            v = wstars.get(s, 0)
+            whole_bars += (
+                f'<div class="bar-row"><span class="bar-label">{s}★</span>'
+                f'<div class="bar-track"><div class="bar-fill st{s}" '
+                f'style="width:{100*v/wmax:.2f}%"></div></div>'
+                f'<span class="bar-val">{v:,} · {100*v/wtotal:.1f}%</span></div>'
+            )
+        whole_panel = (
+            f'<div class="panel">{whole_bars}'
+            f'<div class="panel-title">Whole file · {wtotal:,} reviews</div></div>'
+        )
+    else:
+        whole_panel = "<p class='sub'>whole-file distribution not provided</p>"
 
     # ---- assemble JS data ----
     js_rows = []
@@ -132,15 +184,22 @@ def build_html(data):
         f'<span class="bar-val">{v:,}</span></div>'
         for s, v in stars_sorted)
 
+    # full 3x3 confusion grid (zeros are a finding too)
+    def conf_cell(a, p):
+        n = conf.get(f"{a}|{p}", 0)
+        diag = "diag" if a == p else ""
+        zero = "zero" if n == 0 else ""
+        return (f'<td class="conf-cell {diag} {zero}" data-a="{esc(a)}" data-p="{esc(p)}">'
+                f'{n}</td>')
+
     conf_rows = "".join(
-        f'<tr class="conf-row" data-a="{esc(a)}" data-p="{esc(p)}" data-n="{n}">'
+        f'<tr class="conf-row" data-a="{esc(a)}">'
         f'<td class="cell-a">{esc(a)}</td>'
-        f'<td class="cell-p">{esc(p)}</td>'
-        f'<td class="cell-n"><span class="pill" style="background:{CLASS_COLOR.get(p, "#888")}">{n}</span></td>'
-        f'</tr>'
-        for a in all_labels for p in all_labels
-        if (n := conf.get(f"{a}|{p}"))
+        + "".join(conf_cell(a, p2) for p2 in all_labels)
+        + f'</tr>'
+        for a in all_labels
     )
+    conf_head = "<tr><th>true \\ pred</th>" + "".join(f"<th>{esc(p)}</th>" for p in all_labels) + "</tr>"
 
     # per-class accuracy bars
     acc_bars = ""
@@ -185,15 +244,23 @@ def build_html(data):
                         f'<span class="bar-val">{v:,}</span></div>')
             return out
 
-        agree_line = f"<p class='agree'>LLM vs word-list primary-emotion agreement: <b>{emo_agree}%</b> on rows both assigned an emotion.</p>" if emo_agree is not None else ""
+        if emo_agree_all is not None:
+            agree_line = (
+                f"<p class='agree'>Emotion agreement: <b>{emo_agree_all}%</b> across "
+                f"all {n_all} reviews ({emo_agree}% over the {len(both)} rows where both "
+                f"methods produced an emotion). {n_nrc_missing} rows had no word in the "
+                f"NRC list, so they score as no-agreement.</p>"
+            )
+        else:
+            agree_line = ""
         emo_panel = f"""
         <section class="card emo-section">
           <h2 class="sec-title">🕵️ Primary emotion — LLM vs. word list</h2>
-          <p class="sub">LLM predicts an emotion per review (one call). The NRC word list scores each review's words and takes the top emotion.</p>
+          <p class="sub">The LLM predicts one of 8 emotions per review (same call as sentiment). The NRC word list scores each review's words and takes the highest emotion; ties are broken alphabetically (anticipation, disgust, fear…) — which is why anticipation is common in the word-list column.</p>
           {agree_line}
           <div class="grid2">
-            <div class="panel">{emo_bars(llm_emo if llm_emo else {})}<div class="panel-title">LLM-predicted emotion</div></div>
-            <div class="panel">{emo_bars(nrc_emo)}<div class="panel-title">NRC word-list emotion</div></div>
+            <div class="panel">{emo_bars(llm_emo if llm_emo else {})}<div class="panel-title">LLM-predicted emotion ({sum((llm_emo or {}).values()):,} rows)</div></div>
+            <div class="panel">{emo_bars(nrc_emo)}<div class="panel-title">NRC word-list emotion ({sum((nrc_emo or {}).values()):,} rows + {n_nrc_missing} no-emotion)</div></div>
           </div>
         </section>"""
 
@@ -269,6 +336,13 @@ td.emo {{ text-align:center; }}
 .status {{ font-size:11px; padding:2px 8px; border-radius:20px; font-weight:600; white-space:nowrap; }}
 .status.ok{{background:#173d2a;color:var(--ok);}} .status.bad{{background:#47201f;color:var(--bad);}} .status.na{{background:#2a323b;color:var(--na);}}
 .pill {{ display:inline-block; padding:1px 10px; border-radius:20px; color:#fff; font-weight:700; font-size:12px; }}
+table.conf {{ width:auto; min-width:340px; }}
+table.conf th {{ text-align:center; font-size:12px; }}
+table.conf td.conf-cell {{ text-align:center; font-weight:700; font-size:15px; padding:10px 18px; border:1px solid var(--line); background:var(--card2); border-radius:8px; }}
+table.conf tr {{ background:transparent !important; }}
+table.conf td.cell-a {{ font-weight:600; padding:10px 14px; }}
+table.conf .diag {{ border-color:var(--accent); color:var(--accent); }}
+table.conf .zero {{ color:#4b5563; font-weight:400; }}
 .conf-row td.cell-a{{font-weight:600;}} 
 .filters {{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:16px 0; }}
 .filters select,.filters input {{ background:var(--card2); color:var(--fg); border:1px solid var(--line); border-radius:9px; padding:8px 12px; font-size:13.5px; }}
@@ -295,13 +369,18 @@ a {{ color:var(--accent); }}
     <div class="kpi"><div class="v">{m["n"]:,}</div><div class="l">Reviews</div></div>
     <div class="kpi"><div class="v">{m["n_pred"]:,}</div><div class="l">Classified</div></div>
     <div class="kpi accent"><div class="v">{m["acc_pct"]}%</div><div class="l">Accuracy</div></div>
-    <div class="kpi"><div class="v">{m["n"] - m["n_pred"]}</div><div class="l">Errors / skipped</div></div>
+    <div class="kpi"><div class="v">{m["n"] - m["n_pred"]}</div><div class="l">API / parse failures</div></div>
   </div>
+
+  {runs_html}
 
   <section class="card">
     <h2 class="sec-title">📊 Star-rating distribution</h2>
-    <p class="sub">Gift Card reviews skew heavily toward 5★ — most of the workload is easy.</p>
-    {star_bars}
+    <p class="sub">Left: the <i>whole file</i> ({whole.get("total", 0):,} Gift Card reviews), heavily 5★-skewed. Right: this balanced run's sample (50 per class), which is not skewed.</p>
+    <div class="grid2">
+      {whole_panel}
+      <div class="panel">{star_bars}<div class="panel-title">Balanced sample ({m["n"]} reviews)</div></div>
+    </div>
   </section>
 
   <section class="card">
@@ -321,8 +400,8 @@ a {{ color:var(--accent); }}
 
   <section class="card">
     <h2 class="sec-title">🔄 Confusion matrix</h2>
-    <p class="sub">Where each answer class was <i>sent</i> (rows = true class, columns = predicted). Only non-zero cells shown.</p>
-    <table><thead><tr><th>True class</th><th>Predicted</th><th>Count</th></tr></thead>
+    <p class="sub">Rows = true class (from rating), columns = predicted. Cells on the diagonal are correct. A gray <b>0</b> is a mistake that never happened — e.g. no negative review was ever called positive.</p>
+    <table class="conf"><thead>{conf_head}</thead>
     <tbody>{conf_rows}</tbody></table>
   </section>
 
@@ -371,7 +450,7 @@ function applyFilters() {{
     let show = true;
     if (curFilter==='correct') show = r.correct===true;
     else if (curFilter==='wrong') show = r.correct===false;
-    else if (curFilter==='unscored') show = !r.correct;
+    else if (curFilter==='unscored') show = r.correct===null || r.correct===undefined;
     if (show && fAnswer && classOf(r.rating)!==fAnswer) show=false;
     if (show && fPred && r.predicted!==fPred) show=false;
     if (show && q) {{

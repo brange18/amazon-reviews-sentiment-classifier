@@ -49,10 +49,54 @@ def main():
     rows, lexicon = write_with_nrc(args.pred_jsonl, nrc_jsonl)
     print(f"  lex words: {len(lexicon)}", file=sys.stderr)
 
+    # Whole-file star distribution (if the data file is available).
+    whole_file = None
+    data_gz = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "data", "Gift_Cards.jsonl.gz")
+    if os.path.exists(data_gz):
+        import gzip
+        from collections import Counter
+        stars = Counter()
+        total = 0
+        with gzip.open(data_gz, "rt", encoding="utf-8") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                try:
+                    stars[int(float(json.loads(line)["rating"]))] += 1
+                    total += 1
+                except Exception:  # noqa: BLE001
+                    continue
+        whole_file = {"stars": {s: stars.get(s, 0) for s in range(1, 6)}, "total": total}
+        print(f"  whole file: {total:,} reviews, stars {dict(whole_file['stars'])}", file=sys.stderr)
+    else:
+        print("  data file not found; whole-file chart omitted", file=sys.stderr)
+
     metrics = build_metrics(rows)
+
+    # Runs comparison: the current run + any other summary_*.json files saved.
+    runs = [{
+        "name": "Balanced three-class (seed 42, 50/class)",
+        "scheme": "3-class",
+        "n": metrics["n"],
+        "acc": f"{metrics['acc_pct']}%",
+    }]
+    results_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
+    seq_sum = os.path.join(results_dir, "summary_seq100.json")
+    if os.path.exists(seq_sum):
+        with open(seq_sum, encoding="utf-8") as f:
+            s = json.load(f)
+        runs.append({
+            "name": "Sequential first-100 (2-class)",
+            "scheme": "2-class",
+            "n": s["metrics"]["n_rows_attempted"],
+            "acc": f"{s['metrics']['accuracy_pct']}%",
+        })
+
     doc = build_html({
         "rows": rows, "metrics": metrics,
         "title": args.title, "subtitle": args.subtitle,
+        "whole_file": whole_file, "runs": runs,
     })
     with open(args.out, "w", encoding="utf-8") as f:
         f.write(doc)

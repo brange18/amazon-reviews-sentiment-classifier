@@ -14,8 +14,11 @@ Diego**. This project uses the **Gift Cards** review category
 `text`, and metadata (`verified_purchase`, `helpful_vote`, `timestamp`,
 `images`, `asin`, `parent_asin`, `user_id`).
 
-The dashboard below shows every number quoted in this report; the same figures
-also live in `results/summary_*.json` and `results/predictions_*.jsonl`.
+The dashboard shows every number quoted in this report: the main figures are in
+the charts and tables, and the smaller derived figures (the 95.3% re-score, the
+tie counts, and the per-class anger counts) are in the "Derived figures"
+section. The same values also live in `results/summary_*.json` and
+`results/predictions_*.jsonl`.
 
 ![Dashboard top](./shots/dashboard_top.png)
 
@@ -73,17 +76,19 @@ The balanced re-score tells the real story. **Sampling equal numbers of each
 class dropped the headline accuracy from 98.0% to 73.3%**, and it showed where
 the mistakes concentrate. The model is near-perfect on clearly positive and
 clearly negative reviews (96.0% each) and nearly useless on neutral ★★★ ones
-(28.0%). **Collapsing neutral into negative on the balanced set (treating a
-predicted NEUTRAL as agreeing with a negative answer) gives 143/150 = 95.3%**,
-so the neutral class alone accounts for most of the gap between the two runs.
+(28.0%). **Re-scoring the balanced set with the Step 2 rule (★&lt;4 counts as
+negative, and a predicted NEUTRAL is now also taken as negative) gives
+143/150 = 95.3%**, so the neutral class alone accounts for most of the gap
+between the two runs.
 
 The two misses in the sequential run are worth naming. The model called *"**No
 note attached to sent gift card**"* (a ★5 rating, but written as a complaint
 because the present arrived without the requested note) NEGATIVE instead of
-POSITIVE. It also called the ★3 review *"**Easy to use. Very easy to use**"*
-POSITIVE, which the 2-class rule files as a miss only because ★3 counts as
-negative; on the 3-class scheme that review is neutral, and the model's reading
-is arguably right. One genuine error, one labeling artifact.
+POSITIVE. It also called the ★3 review titled *"**Easy to use**"* (body: *"Very
+easy to use. I wish I knew about it earlier"*) POSITIVE, which the 2-class rule
+files as a miss only because ★3 counts as negative; on the 3-class scheme that
+review is neutral, and the model's reading is arguably right. One genuine
+error, one labeling artifact.
 
 ---
 
@@ -131,8 +136,12 @@ is arguably right. One genuine error, one labeling artifact.
      gift-card reviews tie often and anticipation dominates the word-list
      column (68 of 120 labels) instead of the review's actual mood.
   2. **The LLM uses anger as its default negative emotion.** It picked anger
-     for **41 of the 50 negative** reviews and **24 of the 50 neutral** ones,
-     while the word list spreads those across sadness, anticipation, and fear.
+     for **41 of the 50 negative** reviews and **24 of the 50 neutral** ones.
+     The word list does not share that habit: of the 50 negative reviews it
+     called 25 anticipation, 6 trust, and 4 anger (7 with no emotion), and of
+     the 50 neutral ones 20 anticipation, 5 trust, and 4 anger (13 with no
+     emotion). Where the LLM says "angry", the word list mostly says
+     "anticipation" (again the tie-break) or finds no emotion at all.
 - A concrete divergence: *"Gift message not included. Very disappointing"* is
   **anticipation** by the word list (the "gift" tie wins alphabetically) but
   **sadness** by the LLM. The lexicon tags "disappointing" as sadness, yet the

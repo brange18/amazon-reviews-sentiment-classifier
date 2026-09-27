@@ -143,6 +143,59 @@ def build_html(data):
           <tbody>{rows_html}</tbody></table>
         </section>"""
 
+    # derived figures used in the report, computed from this run's data.
+    # (kept on the dashboard so every number quoted in the README is visible.)
+    derived = ""
+    if rows:
+        n = len(rows)
+        # merge: re-score with the Step 2 rule (>=4 positive, else negative),
+        # so both true and predicted NEUTRAL count as negative.
+        merge_ok = 0
+        for r in rows:
+            true_side = "POS" if int(float(r["rating"])) >= 4 else "NEG"
+            pred_side = {"POSITIVE": "POS", "NEUTRAL": "NEG", "NEGATIVE": "NEG"}.get(r.get("predicted"))
+            if pred_side == true_side:
+                merge_ok += 1
+        # word-list ties, from the per-row scores (attached by run_pipeline).
+        # The tie-break is alphabetical (first in EMOTIONS order).
+        ties = ties_ant = labeled = 0
+        has_nrc_scores = any(r.get("nrc_scores") for r in rows)
+        if has_nrc_scores:
+            for r in rows:
+                s = r.get("nrc_scores") or {}
+                top = max(s.values()) if s else 0
+                if top == 0:
+                    continue
+                labeled += 1
+                winners = [e for e, v in s.items() if v == top]
+                if len(winners) > 1:
+                    ties += 1
+                    if winners[0] == "anticipation":
+                        ties_ant += 1
+        # LLM anger per class, over the 50/50/50 groups
+        def cls3(rating):
+            r = int(float(rating))
+            return 'POSITIVE' if r >= 4 else ('NEUTRAL' if r == 3 else 'NEGATIVE')
+        neg50 = [r for r in rows if cls3(r["rating"]) == "NEGATIVE"]
+        neu50 = [r for r in rows if cls3(r["rating"]) == "NEUTRAL"]
+        anger_neg = sum(1 for r in neg50 if r.get("emotion") == "anger")
+        anger_neu = sum(1 for r in neu50 if r.get("emotion") == "anger")
+        derived = f"""
+        <section class="card">
+          <h2 class="sec-title">🧮 Derived figures (all from this run's saved predictions)</h2>
+          <p class="sub">Smaller numbers quoted in the report, kept here so nothing is asserted off-screen.</p>
+          <table>
+            <thead><tr><th>Figure</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Re-scoring the sample with the Step 2 rule (★&lt;4 = negative, incl. predicted NEUTRAL as negative)</td><td class="num">{merge_ok}/{n} = {round(100*merge_ok/n,1)}%</td></tr>
+              <tr><td>Word-list emotion was a tie (highest score shared by 2+ emotions)</td><td class="num">{ties}/{labeled} rows</td></tr>
+              <tr><td>...of which the alphabetical tie-break sent to anticipation</td><td class="num">{ties_ant}</td></tr>
+              <tr><td>LLM called these negative reviews "anger"</td><td class="num">{anger_neg}/50</td></tr>
+              <tr><td>LLM called these neutral reviews "anger"</td><td class="num">{anger_neu}/50</td></tr>
+            </tbody>
+          </table>
+        </section>"""
+
     # whole-file distribution (optional, from run_pipeline)
     whole = data.get("whole_file")
     whole_bars = ""
@@ -256,11 +309,11 @@ def build_html(data):
         emo_panel = f"""
         <section class="card emo-section">
           <h2 class="sec-title">🕵️ Primary emotion — LLM vs. word list</h2>
-          <p class="sub">The LLM predicts one of 8 emotions per review (same call as sentiment). The NRC word list scores each review's words and takes the highest emotion; ties are broken alphabetically (anticipation, disgust, fear…) — which is why anticipation is common in the word-list column.</p>
+          <p class="sub">The LLM predicts one of 8 emotions per review (same call as sentiment). The NRC word list scores each review's words and takes the highest emotion; ties are broken alphabetically (anger, anticipation, disgust, fear…) — which is why anticipation is common in the word-list column.</p>
           {agree_line}
           <div class="grid2">
-            <div class="panel">{emo_bars(llm_emo if llm_emo else {})}<div class="panel-title">LLM-predicted emotion ({sum((llm_emo or {}).values()):,} rows)</div></div>
-            <div class="panel">{emo_bars(nrc_emo)}<div class="panel-title">NRC word-list emotion ({sum((nrc_emo or {}).values()):,} rows + {n_nrc_missing} no-emotion)</div></div>
+            <div class="panel">{emo_bars(llm_emo if llm_emo else {})}<div class="panel-title">LLM-predicted emotion ({sum((llm_emo or {}).values()):,} rows, one per review)</div></div>
+            <div class="panel">{emo_bars(nrc_emo)}<div class="panel-title">NRC word-list emotion ({len(rows) - n_nrc_missing:,} rows with an emotion + {n_nrc_missing} with none)</div></div>
           </div>
         </section>"""
 
@@ -406,6 +459,8 @@ a {{ color:var(--accent); }}
   </section>
 
   {emo_panel}
+
+  {derived}
 
   <section class="card">
     <h2 class="sec-title">🔎 Explore the reviews</h2>

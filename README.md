@@ -101,7 +101,7 @@ python run_pipeline.py results/predictions_balanced3.jsonl -o dashboard.html    
 
 ### Step 2 — Sequential 100-row, 2-class
 - **98.0%** accuracy (98/100), 0 errors.
-- Shared verdict: POSITIVE **92/93 (98.9%)**, NEGATIVE **6/7 (85.7%)**.
+- Per class: POSITIVE **92/93 (98.9%)**, NEGATIVE **6/7 (85.7%)**.
 - The 2 disagreements: 1 positive review called negative, 1 negative review
   called positive. Saved in `results/predictions_seq100.jsonl`.
 

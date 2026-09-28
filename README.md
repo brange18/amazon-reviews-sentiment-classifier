@@ -235,7 +235,21 @@ free-text search) with a live count.
 
 ## Author / review
 
-This report and project were generated with the assignment's agent workflow.
-Every number quoted here is read directly from the saved output under
-`results/` and was re-checked against the rendered dashboard; final review and
-verification was performed by the student submitting it.
+I built this project with the agent workflow the assignment calls for. The agent
+wrote most of the code and the first draft of this report; I set the direction,
+made the calls on scope and design, and reviewed the output before submitting.
+
+My review went beyond a read-through. I had every number in this report
+recomputed independently from the raw data and the saved files in `results/`,
+and checked it against the rendered dashboard. That process caught real
+problems in the first draft: the word-list emotion explanation was wrong (the
+actual cause was the alphabetical tie-break, not function words), the
+"Unscored" filter was showing the 40 wrong rows instead of zero, and the star
+chart caption described the balanced sample as skewed. Each of those was fixed
+and re-verified before this version.
+
+The biggest thing I took away is how misleading an accuracy number can be on
+skewed data. The 98% sequential run looked great, and the balanced run showed
+the model can't really tell a lukewarm review from a complaint. I also learned
+not to take the agent's explanations at face value: its first account of why the
+two emotion methods disagreed sounded plausible and was wrong.
